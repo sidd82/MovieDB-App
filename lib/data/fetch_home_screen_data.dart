@@ -18,6 +18,8 @@ class FetchHomeRepo {
     final response = await http.get(
       Uri.parse(BASE_URL + '/home'),
     );
+    // ignore: avoid_print
+    print(BASE_URL);
     if (response.statusCode == 200) {
       trandingData =
           MovieModelList.fromJson(json.decode(response.body)['trandingMovies']);
